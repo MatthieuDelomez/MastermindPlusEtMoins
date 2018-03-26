@@ -2,6 +2,10 @@
 
 import java.util.*;
 
+import Mastermind.DonneeMaster;
+import Mastermind.Fenetre;
+import Mastermind.Observable;
+
 import java.io.*;
 
 
@@ -51,7 +55,7 @@ public class Menu {
 		do {
 			System.out.println("\nÀ quoi souhaitez-vous jouer ?");
 
-			System.out.println("\n1· Plus ou moins \n2· Quitter");
+			System.out.println("\n1· Plus ou moins \n2· Jouez en mode graphique \n3. Quittez");
 
 			
 			Scanner sc = new Scanner(System.in);
@@ -83,7 +87,40 @@ public class Menu {
 				   
 				   break;
 				   
-			case 2:
+			case 2 : 
+				
+				
+
+				String strModeDeveloppeurActiveConsole = "";
+				boolean modeDeveloppeurActiveConsole = false;
+				
+				do {
+					
+					System.out.println("Souhaitez vous activez le mode developpeur(O pour oui/ N pour non) ? :");
+					strModeDeveloppeurActiveConsole = sc.nextLine();
+				}
+				
+				while(!strModeDeveloppeurActiveConsole.equals("O")&&! strModeDeveloppeurActiveConsole.equals("N"));
+				
+				
+				if(strModeDeveloppeurActiveConsole.equals("O"))
+					modeDeveloppeurActiveConsole = true;
+				
+				else
+					modeDeveloppeurActiveConsole = false;
+				
+				
+				Observable Obs = new DonneeMaster();
+				
+				// Instanciation de la fenetre principale.
+				  new Fenetre (Obs, modeDeveloppeurActiveConsole);
+				
+			break;
+			
+		
+				   
+			case 3:
+				
 				   System.out.println("À bientôt !");
 
 				break;
@@ -93,6 +130,6 @@ public class Menu {
 		    	     Erreur.erreurChoix();
 
 			}
-		} while (choix != 1 && choix != 2 && choix != 3 );
+		} while (choix != 1 && choix != 2 && choix != 3  && choix != 4);
 	}
 }
