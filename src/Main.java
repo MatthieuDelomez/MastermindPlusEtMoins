@@ -2,6 +2,7 @@
 
 import java.io.FileInputStream;
 
+
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -11,6 +12,8 @@ import java.util.Properties;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+
+import ConsolePlusMoins.Menu.Menu;
 
 
 /*************************MASTERMIND PLUS ET MOINS*************************
@@ -31,7 +34,7 @@ public class Main {
 	/**
 	 * Variable qui permet la gestion des logs d'erreurs.
 	 */
-//	private static final Logger LOGGER = LogManager.getLogger();
+	private static final Logger LOGGER = LogManager.getLogger();
 	
 	
 
@@ -74,7 +77,7 @@ public class Main {
 				prop.setProperty("coupsMax", "15");
 				prop.setProperty("modeDeveloppeur", "0");
 				
-//				LOGGER.trace(" Execption Properties");
+        		LOGGER.trace(" Execption Properties");
 
 				
 				/*

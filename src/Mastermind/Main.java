@@ -2,6 +2,10 @@ package Mastermind;
 
 import com.sdz.model.*;
 import com.sdz.vue.*;
+
+import Mastermind.Model.DonneeMaster;
+import Mastermind.Vue.Fenetre;
+
 import java.util.Scanner;
 
 import com.sdz.observation.Observable;
