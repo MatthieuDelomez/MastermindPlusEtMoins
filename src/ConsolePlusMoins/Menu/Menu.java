@@ -1,6 +1,9 @@
 package ConsolePlusMoins.Menu;
 
-import java.util.*;
+import java.io.InputStream;
+
+import java.util.Properties;
+import java.util.Scanner;
 
 import ConsolePlusMoins.AbstractClass.Erreur;
 import ConsolePlusMoins.ClassFille.PlusMoins;
@@ -8,10 +11,7 @@ import Mastermind.Model.DonneeMaster;
 import Mastermind.Observable.Observable;
 import Mastermind.Vue.Fenetre;
 
-import java.io.*;
-
-/***************************
- * MASTERMIND PLUS ET MOINS***********************
+   /************************MASTERMIND PLUS ET MOINS*************************
  * 
  * /**************************************************************************
  * 

@@ -1,36 +1,28 @@
 package Mastermind.Donnees;
 
-import com.sdz.model.*;
-
-import com.sdz.vue.*;
-
 import Mastermind.Model.DonneeMaster;
-
-import com.sdz.control.*;
-
 
 /******************************MASTERMIND********************************/
 
 /*************************************************************************
  * 
- * Pattern MVC - Classe permettant de controler et transférer
- * les données saisies par l'utilisateur associés au jeu Mastermind.
+ * Pattern MVC - Classe permettant de controler et transférer les données
+ * saisies par l'utilisateur associés au jeu Mastermind.
  * 
  * @author Delomez Matthieu
  *************************************************************************/
 
-
 public class MasterControl {
-	
 
 	/**
 	 * Modèle de données relatif au jeu Mastermind.
+	 * 
 	 * @see DonneeMaster
 	 */
 	private DonneeMaster modelMaster;
 
 	/**
-	 * Constructeur de la classe MasterControler. 
+	 * Constructeur de la classe MasterControler.
 	 * 
 	 * @param modelMaster Modèle de données relatif au jeu.
 	 */
@@ -38,17 +30,10 @@ public class MasterControl {
 		this.modelMaster = modelMaster;
 	}
 
-	
-	
-	/* *************************************************************************************************
-	 * 
-	 ***************************METHODE RELATIVE AU MODE CHALLENGER*************************************
-	 * 
-	 **************************************************************************************************/
-	
-	
+
 	/**
-	 * Méthode relative au mode Challenger qui permet de transférer la combinaison secrète de l'ordinateur au modèle.
+	 * Méthode relative au mode Challenger qui permet de transférer la combinaison
+	 * secrète de l'ordinateur au modèle.
 	 * 
 	 * @param propositionSecrete Combinaison secrète de l'ordinateur en mode challenger.
 	 */
@@ -57,7 +42,8 @@ public class MasterControl {
 	}
 
 	/**
-	 * Méthode relative au mode Challenger qui permet de transférer la proposition du joueur au modèle.
+	 * Méthode relative au mode Challenger qui permet de transférer la proposition
+	 * du joueur au modèle.
 	 * 
 	 * @param propositionJoueur Proposition du joueur en mode challenger.
 	 */
@@ -65,17 +51,10 @@ public class MasterControl {
 		this.modelMaster.setPropoManChallenger(propoMan);
 	}
 
-	
-	
-	/* *************************************************************************************************
-	 * 
-	 ***************************METHODE RELATIVE AU MODE DEFENSEUR**************************************
-	 * 
-	 **************************************************************************************************/
 
-	
 	/**
-	 * Méthode relative au mode Défenseur qui permet de transférer la combinaison secrète du joueur au modèle.
+	 * Méthode relative au mode Défenseur qui permet de transférer la combinaison
+	 * secrète du joueur au modèle.
 	 * 
 	 * @param propositionSecrete Combinaison secrète du joueur en mode défenseur.
 	 */
@@ -84,24 +63,22 @@ public class MasterControl {
 	}
 
 	/**
-	 * Méthode relative au mode Défenseur qui permet de transférer la réponse du joueur au modèle.
+	 * Méthode relative au mode Défenseur qui permet de transférer la réponse du
+	 * joueur au modèle.
 	 * 
-	 * @param reponseJoueur Réponse du joueur en mode défenseur.
+	 * @param reponseJoueur
+	 *            Réponse du joueur en mode défenseur.
 	 */
 	public void setReponseManDefenseur(String reponseMan) {
 		this.modelMaster.setPropoSecreteManDefenseur(reponseMan);
 	}
-	
 
-	/* *************************************************************************************************
-	 * 
-	 *********************************METHODE RELATIVE AU MODE DUEL*************************************
-	 * 
-	 **************************************************************************************************/
-	
+
 
 	/**
-	 * Méthode relative au mode Duel qui permet de transférer la combinaison secrète de l'ordinateur au modèle.
+	 * Méthode relative au mode Duel qui permet de transférer la combinaison secrète
+	 * de l'ordinateur au modèle.
+	 * 
 	 * @param propositionSecrete Combinaison secrète de l'ordinateur en mode duel.
 	 */
 	public void setPropoSecreteCpuDuel(String propoSecrete) {
@@ -109,15 +86,19 @@ public class MasterControl {
 	}
 
 	/**
-	 * Méthode relative au mode Duel qui permet de transférer la combinaison secrète du joueur au modèle.
-	 * @param propositionSecrete Combinaison secrète du joueur en mode duel.
+	 * Méthode relative au mode Duel qui permet de transférer la combinaison secrète
+	 * du joueur au modèle.
+	 * 
+	 * @param propositionSecrete  Combinaison secrète du joueur en mode duel.
 	 */
 	public void setPropoSecreteManDuel(String propoSecrete) {
 		this.modelMaster.setPropoSecreteManDuel(propoSecrete);
 	}
 
 	/**
-	 * Méthode relative au mode Duel qui permet de transférer la proposition du joueur au modèle.
+	 * Méthode relative au mode Duel qui permet de transférer la proposition du
+	 * joueur au modèle.
+	 * 
 	 * @param propositionJoueur Proposition du joueur en mode duel.
 	 */
 	public void setPropoManDuel(String propoMan) {
@@ -125,33 +106,32 @@ public class MasterControl {
 	}
 
 	/**
-	 * Méthode relative au mode Duel qui permet de transférer la réponse du joueur au modèle.
+	 * Méthode relative au mode Duel qui permet de transférer la réponse du joueur
+	 * au modèle.
+	 * 
 	 * @param reponseJoueur Réponse du joueur en mode duel.
 	 */
 	public void setReponseManDuel(String reponseMan) {
 		this.modelMaster.setReponseManDuel(reponseMan);
 	}
 
-	
-	/* *************************************************************************************************
-	 * 
-	 **********************************METHODE RELATIVE A TOUT MODE*************************************
-	 * 
-	 **************************************************************************************************/
 
-	
+
 	/**
-	 * Méthode commune à tous les modes de jeu qui permet de transférer le mode de jeu au modèle.
-	 * @param modeJeu - Challenger = 0, Defenseur = 1, Duel = 2.
+	 * Méthode commune à tous les modes de jeu qui permet de transférer le mode de
+	 * jeu au modèle.
+	 * 
+	 * @param modeJeu Challenger = 0, Defenseur = 1, Duel = 2.
 	 */
 	public void setModeJeu(int modeJeu) {
 		this.modelMaster.setModeJeu(modeJeu);
 
-
 	}
 
 	/**
-	 * Méthode commune à tous les modes de jeu qui permet de transférer le nombre d'essais au modèle.
+	 * Méthode commune à tous les modes de jeu qui permet de transférer le nombre
+	 * d'essais au modèle.
+	 * 
 	 * @param nbEssais Nombre d'essais.
 	 */
 	public void setNbEssai(int nbEssai) {
@@ -159,23 +139,29 @@ public class MasterControl {
 	}
 
 	/**
-	 * Méthode commune à tous les modes de jeu qui permet de transférer le nombre de cases au modèle.
-	 * @param nbreCases - Nombre de cases 
+	 * Méthode commune à tous les modes de jeu qui permet de transférer le nombre de
+	 * cases au modèle.
+	 * 
+	 * @param nbreCases  Nombre de cases
 	 */
 	public void setNbCase(int nbCase) {
 		this.modelMaster.setNbCase(nbCase);
 	}
 
 	/**
-	 * Méthode commune à tous les modes de jeu qui permet de transférer le nombre de couleurs utilisables au modèle.
-	 * @param nbrCouleurs - Nombre de couleurs utilisables 
+	 * Méthode commune à tous les modes de jeu qui permet de transférer le nombre de
+	 * couleurs utilisables au modèle.
+	 * 
+	 * @param nbrCouleurs Nombre de couleurs utilisables
 	 */
 	public void setNbCouleur(int nbCouleur) {
 		this.modelMaster.setNbCouleur(nbCouleur);
 	}
 
 	/**
-	 * Méthode commune à tous les modes de jeu qui permet de transférer le choix du joueur en fin de partie au modèle.
+	 * Méthode commune à tous les modes de jeu qui permet de transférer le choix du
+	 * joueur en fin de partie au modèle.
+	 * 
 	 * @param choixFinPartie Choix du joueur en fin de partie.
 	 */
 	public void setChoixFinPartie(String choixFinPartie) {
