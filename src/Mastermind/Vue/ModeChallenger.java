@@ -23,8 +23,8 @@ import Mastermind.Observable.Observer;
 
 /*************************MASTERMIND******************************/
 /**
- * Classe qui correspond au mode de jeu Challenger. 
- * Elle implémente l'interface Observer.
+ * Classe qui correspond au mode de jeu Challnger. Elle implémente l'interface
+ * Observer.
  * 
  * @ author Matthieu Delomez
  * @see Observer
@@ -500,7 +500,6 @@ public class ModeChallenger extends JPanel implements Observer {
 		/*
 		 * La grille de jeu est un JPanel organisé en GridLayout composé d'un tableau de
 		 * JLabel et d'un tableau de JPanel organisé également en GridLayout.
-		 * 
 		 */
 		for (int i = 0; i < this.nbEssai; i++) {
 
@@ -563,8 +562,9 @@ public class ModeChallenger extends JPanel implements Observer {
 	 * @param lig Ligne de la grille de jeu.
 	 * @param col Colonne de la grille de jeu.
 	 * @param couleurChoisie Couleur choisie par le joueur.
-	 * @param codeCouleur Code couleur associé à une couleur. Exemple : Bleu :"0".
+	 * @param codeCouleur Code couleur associé à une couleur. Exemple : Bleu :"0", Jaune
 	 */
+	
 	private void updateGrilleJeu(int lig, int col, ImageIcon couleurChoisie, String codeCouleur) {
 		if (colonne <= this.nbCase) {
 
@@ -672,7 +672,8 @@ public class ModeChallenger extends JPanel implements Observer {
 	 * Pattern Observer - Méthode permettant de mettre à jour la grille de jeu selon
 	 * la réponse de l'ordinateur.
 	 * 
-	 * @param reponse Réponse de l'ordinateur.
+	 * @param reponse
+	 *            Réponse de l'ordinateur.
 	 */
 	public void updateMaster(String reponse) {
 

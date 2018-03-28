@@ -133,9 +133,11 @@ public class BoiteDialogueParametrage extends JDialog {
 	 */
 	private boolean modeDeveloppeurActive;
 
-	
 
-	public BoiteDialogueParametrage(JFrame parent, String title, boolean modal,int nbEssai, int nbCase, int nbCouleur) {
+
+	public BoiteDialogueParametrage(JFrame parent, String title, boolean modal,
+
+			int nbEssai, int nbCase, int nbCouleur) {
 
 		super(parent, title, modal);
 		this.nbCase = nbCase;
@@ -310,6 +312,8 @@ public class BoiteDialogueParametrage extends JDialog {
 	private void showDialog(boolean affichage) {
 		this.setVisible(affichage);
 	}
+
+
 
 	/**
 	 * Accesseur qui pourra récupérer le nombre de cases pour le jeu.

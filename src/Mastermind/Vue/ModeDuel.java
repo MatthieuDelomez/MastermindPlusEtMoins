@@ -22,7 +22,8 @@ import Mastermind.Donnees.MasterControl;
 import Mastermind.Model.DonneeMaster;
 import Mastermind.Observable.Observer;
 
-    /*************************MASTERMIND******************************/
+/*************************MASTERMIND******************************/
+
 /**
  * Classe qui correspond au mode de jeu Duel. Elle implémente l'interface
  * Observer.
@@ -284,11 +285,12 @@ public class ModeDuel extends JPanel implements Observer {
 	 * @param nbCase Nombre de cases du jeu.
 	 * @param nbEssai Nombre d'essais du jeu.
 	 * @param nbCouleur Nombre de couleurs utilisables du jeu.
-	 * @param modeDeveloppeurActive Paramètre de type booléen indiquant 
-	 * si le mode développeur est activé ou non.
+	 * @param modeDeveloppeurActive Paramètre de type booléen indiquant si 
+	 * le mode développeur est activé ou non.
 	 * @param modelMaster Modèle de données correspondant au jeu.
 	 * @see DonneeMaster
 	 */
+	
 	public ModeDuel(int nbCase, int nbCouleur, int nbEssai, boolean modeDeveloppeurActive, DonneeMaster modelMaster) {
 
 		LOGGER.trace("Instanciation du jeu Mastermind en mode Duel");
@@ -967,7 +969,9 @@ public class ModeDuel extends JPanel implements Observer {
 	 * Méthode pour MAJ la comninaison secrete choisie par le joueur.
 	 * 
 	 * @param col - Colonne de la combinaison secrete
+	 * 
 	 * @param couleurChoisie - Couleur choisie par le joueur
+	 * 
 	 * @param codeCouleur - Nombre egal à une couleur
 	 */
 	private void updateCombiSecrete(int col, ImageIcon couleurChoisie, String codeCouleur) {
@@ -1003,6 +1007,7 @@ public class ModeDuel extends JPanel implements Observer {
 	 * Méthode pour effacer la combinaison secrète choisie par le joueur.
 	 * 
 	 * @param col - Colonne de la combinaison secrète.
+	 * 
 	 * @param emplacementVide - Image de l'emplacement vide.
 	 */
 	private void effacerCombiSecrete(int col, ImageIcon emplacementVide) {
@@ -1025,8 +1030,11 @@ public class ModeDuel extends JPanel implements Observer {
 	 * de joueur.
 	 * 
 	 * @param lig - Ligne de la grille de jeu de gauche.
+	 * 
 	 * @param col - Colonne de la grille de gauche.
+	 * 
 	 * @param couleurChoisie - Couleur choisie par le joueur.
+	 * 
 	 * @param codeCouleur - Nombre egal à une couleur.
 	 */
 	private void affichagePropoMan(int lig, int col, ImageIcon couleurChoisie, String codeCouleur) {
@@ -1062,7 +1070,9 @@ public class ModeDuel extends JPanel implements Observer {
 	 * Méthode pour effacer une ligne de la grille du jeu de gauche.
 	 * 
 	 * @param lig - Ligne de la grille gauche.
+	 * 
 	 * @param col - Colonne de la grille de gauche.
+	 * 
 	 * @param emplacementVide - Image d'un emplacement vide.
 	 */
 	private void effacerPropoMan(int lig, int col, ImageIcon emplacementVide) {
@@ -1091,6 +1101,7 @@ public class ModeDuel extends JPanel implements Observer {
 	 * Méthode pour afficher la réponse du joueur sur la grille de droite.
 	 * 
 	 * @param couleurChoisieReponse - Couleur choisie par le joueur (Blanc/Rouge).
+	 * 
 	 * @param codeCouleurReponse - Couleur associé à un chiffre.
 	 */
 	private void affichageReponseMan(ImageIcon couleurChoisieReponse, int codeCouleurReponse) {
@@ -1306,6 +1317,7 @@ public class ModeDuel extends JPanel implements Observer {
 	 * Gestion de la fin de partie en fonction de la réponse du joueur/Cpu.
 	 * 
 	 * @param reponse - Reponser du joueur ou du Cpu.
+	 * 
 	 * @param identiteJoueur - Identité de celui qui répond : joueur ou Cpu.
 	 */
 	private void gestionFinPartie(String reponse, char identiteJoueur) {
@@ -1352,7 +1364,6 @@ public class ModeDuel extends JPanel implements Observer {
 		}
 
 	}
-
 
 
 	/*

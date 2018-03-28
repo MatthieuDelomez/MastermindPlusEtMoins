@@ -12,7 +12,6 @@ import Mastermind.Observable.Observable;
 import Mastermind.Observable.Observer;
 
 /*************************MASTERMIND******************************/
-
 /**
  * Pattern MVC - Classe qui correspond au modèle de données du jeu. Le modèle de
  * données va réceptionner les données du controler, le analyser et mettre à
@@ -84,9 +83,7 @@ public class DonneeMaster implements Observable {
 			affichage = "";
 
 	/**
-	 * 
 	 * Paramètre du jeu.
-	 * 
 	 */
 
 	private int nbEssai, nbCase, nbCouleur;
@@ -103,11 +100,13 @@ public class DonneeMaster implements Observable {
 
 	private static final Logger LOGGER = LogManager.getLogger();
 
+
+
 	/**
+	 * 
 	 * Méthode qui permet de récupérer la combinaison secrète du Cpu.
 	 * 
 	 * @param proposiSecret Combinaison secrète de l'ordi en challenger.
-	 * 
 	 */
 
 	public void setPropoSecreteCpuChallenger(String propoSecrete) {
@@ -117,13 +116,11 @@ public class DonneeMaster implements Observable {
 	}
 
 	/**
-	 * 
 	 * Méthode relative au mode Challenger qui permet de récupérer la proposition du
 	 * joueur.
 	 * Suite à la proposition du joueur, l'ordinateur devra répondre.
 	 * 
-	 * @param propositionJoueur  Proposition du joueur en mode challenger.
-	 * 
+	 * @param propositionJoueur Proposition du joueur en mode challenger.
 	 */
 
 	public void setPropoManChallenger(String propoMan) {
@@ -137,10 +134,8 @@ public class DonneeMaster implements Observable {
 	}
 
 	/**
-	 * 
 	 * Méthode relative au mode Challenger qui permet d'analyser la proposition du
 	 * joueur en la comparant à la combinaison secrète de l'ordinateur.
-	 * 
 	 */
 
 	private void analyseProposiManChallenger() {
@@ -219,14 +214,16 @@ public class DonneeMaster implements Observable {
 
 	}
 
+
+
 	/**
 	 * 
 	 * Méthode relative au mode Défenseur qui permet de récupérer la combinaison
-	 * secrète du joueur. Après récupération de la combinaison secrète du joueur,
-	 * l'ordinateur devra faire une proposition.
+	 * secrète du joueur.
+	 * Après récupération de la combinaison secrète du joueur, l'ordinateur devra
+	 * faire une proposition.
 	 * 
-	 * @param proposiSecret  Combinaison secrète du joueur en mode défenseur.
-	 * 
+	 * @param proposiSecret Combinaison secrète du joueur en mode défenseur.
 	 */
 
 	public void setPropoSecreteManDefenseur(String propoSecrete) {
@@ -250,13 +247,12 @@ public class DonneeMaster implements Observable {
 	}
 
 	/**
-	 * 
 	 * Méthode relative au mode Défenseur qui permet de récupérer la réponse du
 	 * joueur.
+	 * 
 	 * Suite à la réponse du joueur, l'ordinateur devra faire une proposition.
 	 * 
 	 * @param reponseMan Réponse du joueur en mode défenseur.
-	 * 
 	 */
 
 	public void setReponseManDefenseur(String reponseMan) {
@@ -272,7 +268,9 @@ public class DonneeMaster implements Observable {
 	/**
 	 * 
 	 * Méthode correspondant au mode Défenseur, qui permet de programmer la
-	 * proposition du Cpu qui sera adaptée par rapport à la réponse du joueur.
+	 * proposition du Cpu
+	 * 
+	 * qui sera adaptée par rapport à la réponse du joueur.
 	 * 
 	 * La première proposition de la part de l'ordinateur sera le premier élément de
 	 * la liste chainée
@@ -416,7 +414,6 @@ public class DonneeMaster implements Observable {
 	}
 
 	/**
-	 * 
 	 * Méthode relative au mode Duel qui permet de récupérer la combinaison secrète
 	 * du joueur.
 	 * 
@@ -442,7 +439,6 @@ public class DonneeMaster implements Observable {
 	/**
 	 * Méthode relative au mode Duel qui permet de récupérer la proposition du
 	 * joueur.
-	 * 
 	 * Suite à la proposition du joueur, l'ordinateur devra répondre et également
 	 * faire une proposition.
 	 * 
@@ -713,12 +709,10 @@ public class DonneeMaster implements Observable {
 
 
 	/**
-	 * 
 	 * Mutateur commun à tous les modes de jeu qui permet de modifier le mode de
 	 * jeu.
 	 * 
-
-	 * @param modeJeu variable relative au mode de jeu : 0 - Challenger, 1 - Défenseur,
+	 * @param modeJeu Variable relative au mode de jeu : 0 - Challenger, 1 - Défenseur,
 	 * 2 - Duel.
 	 */
 
@@ -729,10 +723,9 @@ public class DonneeMaster implements Observable {
 	}
 
 	/**
-	 * 
 	 * Mutateur commun à tous les modes de jeu qui permet de modifier le nombre
 	 * d'essais.
-
+	 * 
 	 * @param nbEssai Nombre d'essais.
 	 */
 
@@ -770,10 +763,8 @@ public class DonneeMaster implements Observable {
 
 	/**
 	 * Méthode commune à tous les modes de jeu qui permet de récupérer le choix du
-	 * joueur en fin de partie et
-	 * 
-	 * en fonction de cela, faire appel à la méthode adéquate correspondant au choix
-	 * du joueur.
+	 * joueur en fin de partie et en fonction de cela, faire appel à la méthode
+	 * adéquate correspondant au choix du joueur.
 	 * 
 	 * @param choixFinDePartie Choix du joueur en fin de partie.
 	 */

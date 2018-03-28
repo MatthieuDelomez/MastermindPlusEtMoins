@@ -5,9 +5,7 @@ import java.util.Random;
 import ConsolePlusMoins.AbstractClass.Jeu;
 import ConsolePlusMoins.AbstractClass.Joueur;
 
-
-   /************************MASTERMIND PLUS ET MOINS*************************
- * 
+/*
  * /*************************************************************************
  * 
  * Classe fille correspondant à l'ordinateur héritant de la classe mére Joueur.
@@ -31,7 +29,6 @@ public class Cpu extends Joueur {
 	/*
 	 * Méthode pour mettre en place un algorithme pour que l'ordinateiur puisse nous
 	 * proposer un nombre qui sera généré de facon aléatoire.
-	 * 
 	 */
 	public void proposerNbr() {
 		System.out.println("Proposition du Cpu : ");

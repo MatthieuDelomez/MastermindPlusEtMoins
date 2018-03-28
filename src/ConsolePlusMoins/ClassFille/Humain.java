@@ -6,9 +6,7 @@ import ConsolePlusMoins.AbstractClass.Erreur;
 import ConsolePlusMoins.AbstractClass.Jeu;
 import ConsolePlusMoins.AbstractClass.Joueur;
 
-
-   /************************MASTERMIND PLUS ET MOINS*************************
- * 
+/**
  * /*************************************************************************
  * 
  * Classe fille correspondant à l'utilisateur héritant de la classe mére Joueur.

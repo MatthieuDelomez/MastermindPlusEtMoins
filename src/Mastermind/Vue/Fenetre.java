@@ -28,13 +28,11 @@ import Mastermind.Observable.Observable;
 import Mastermind.Observable.Observer;
 
 /*************************MASTERMIND******************************/
-
 /**
  * Classe Fenetre composée d'une barre de menu qui permet d'accéder aux
  * fonctionnalités du jeux. Elle implémente l'interface Observer.
  * 
  * @ author Matthieu Delomez
- * 
  * @see Observer
  * 
  *******************************************************************/
@@ -143,13 +141,14 @@ public class Fenetre extends JFrame implements Observer {
 	private Observable model;
 
 
+
 	/**
 	 * Constructeur de la classe Fenetre.
 	 * 
 	 * @param donneeMaster
 	 * @param donneeMaster2
 	 * @param string
-	 * @param modeDeveloppeurActiveConsole, paramètre boolean indiquant si le mode developpeur est actif ou
+	 * @param modeDeveloppeurActiveConsole, paramètre boolean 
 	 * indiquant si le mode developpeur est actif ou non.
 	 * @see DonneeMaster
 	 */

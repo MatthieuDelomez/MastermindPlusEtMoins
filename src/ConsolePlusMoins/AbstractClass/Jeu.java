@@ -7,10 +7,7 @@ import java.util.Properties;
 import java.util.Random;
 import java.util.Scanner;
 
-import MainProg.Main;
-
-   /***********************MASTERMIND PLUS ET MOINS**************************
- * 
+/**
  * /*************************************************************************
  * 
  * Classe abstraite Jeu qui définit les méthodes au bon fonctionnement du jeu
@@ -75,7 +72,6 @@ public abstract class Jeu {
 	 * Inportation du fichier config.properties.
 	 */
 	InputStream input = null;
-
 
 	/*
 	 * Constructeur de la classe Jeu.

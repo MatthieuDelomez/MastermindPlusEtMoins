@@ -11,8 +11,7 @@ import Mastermind.Model.DonneeMaster;
 import Mastermind.Observable.Observable;
 import Mastermind.Vue.Fenetre;
 
-   /************************MASTERMIND PLUS ET MOINS*************************
- * 
+/*
  * /**************************************************************************
  * 
  * Classe correspondant au menu en mode console.
@@ -28,7 +27,6 @@ public class Menu {
 	 * Chargement du fichier config.properties
 	 * 
 	 * @param Properties prop
-	 * 
 	 * @param InputStream input
 	 */
 	Properties prop = new Properties();
@@ -38,7 +36,6 @@ public class Menu {
 	 * Constructeur de la classe Jeu.
 	 * 
 	 * @param byte choix - Correspond à la réponse enregistrée.
-	 * 
 	 * @see Erreur
 	 */
 	public Menu() {

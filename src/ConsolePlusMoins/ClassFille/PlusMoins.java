@@ -1,10 +1,10 @@
 package ConsolePlusMoins.ClassFille;
 
 import ConsolePlusMoins.AbstractClass.Jeu;
+
 import ConsolePlusMoins.AbstractClass.Joueur;
 
-   /************************MASTERMIND PLUS ET MOINS*************************
- * 
+/*
  * /**************************************************************************
  * 
  * Classe fille correspondant aux réglages desdifférents modes de jeu héritant
@@ -25,12 +25,6 @@ public class PlusMoins extends Jeu {
 
 	}
 
-
-	/*
-	 * Création du mode Challenger au sein du programme du jeu.
-	 * 
-	 * @see ConsolePlusMoins.AbstractClass.Jeu#challenger()
-	 */
 
 	public void challenger() {
 
@@ -63,12 +57,6 @@ public class PlusMoins extends Jeu {
 		finPartie("Vous avez ==>");
 	}
 
-
-	/*
-	 * Création du mode Defenseur au sein du programme du jeu.
-	 * 
-	 * @see ConsolePlusMoins.AbstractClass.Jeu#defenseur()
-	 */
 
 	public void defenseur() {
 
@@ -110,11 +98,6 @@ public class PlusMoins extends Jeu {
 	}
 
 
-	/*
-	 * Création du mode Challenger au sein du programme du jeu.
-	 * 
-	 * @see ConsolePlusMoins.AbstractClass.Jeu#duel()
-	 */
 
 	public void duel() {
 

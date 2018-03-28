@@ -66,13 +66,11 @@ public class MasterControl {
 	 * Méthode relative au mode Défenseur qui permet de transférer la réponse du
 	 * joueur au modèle.
 	 * 
-	 * @param reponseJoueur
-	 *            Réponse du joueur en mode défenseur.
+	 * @param reponseJoueur Réponse du joueur en mode défenseur.
 	 */
 	public void setReponseManDefenseur(String reponseMan) {
 		this.modelMaster.setPropoSecreteManDefenseur(reponseMan);
 	}
-
 
 
 	/**
@@ -89,7 +87,7 @@ public class MasterControl {
 	 * Méthode relative au mode Duel qui permet de transférer la combinaison secrète
 	 * du joueur au modèle.
 	 * 
-	 * @param propositionSecrete  Combinaison secrète du joueur en mode duel.
+	 * @param propositionSecrete Combinaison secrète du joueur en mode duel.
 	 */
 	public void setPropoSecreteManDuel(String propoSecrete) {
 		this.modelMaster.setPropoSecreteManDuel(propoSecrete);
@@ -114,7 +112,6 @@ public class MasterControl {
 	public void setReponseManDuel(String reponseMan) {
 		this.modelMaster.setReponseManDuel(reponseMan);
 	}
-
 
 
 	/**
@@ -142,7 +139,7 @@ public class MasterControl {
 	 * Méthode commune à tous les modes de jeu qui permet de transférer le nombre de
 	 * cases au modèle.
 	 * 
-	 * @param nbreCases  Nombre de cases
+	 * @param nbreCases Nombre de cases
 	 */
 	public void setNbCase(int nbCase) {
 		this.modelMaster.setNbCase(nbCase);

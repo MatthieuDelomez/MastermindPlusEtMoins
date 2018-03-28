@@ -25,8 +25,8 @@ import Mastermind.Observable.Observer;
 /******************************MASTERMIND********************************/
 
 /*************************************************************************
- * Classe relative au mode défenseur du jeu. Cette classe implémente l'interface
- * Observer.
+ * Classe relative au mode défenseur du jeu. Cette classe implémente 
+ * l'interface Observer.
  * 
  * @author Delomez Matthieu
  *************************************************************************/
@@ -242,7 +242,8 @@ public class ModeDefenseur extends JPanel implements Observer {
 	 * 
 	 * @ see DonneeMaster
 	 */
-	public ModeDefenseur(int nbCase, int nbEssai, int nbCouleur, boolean modeDeveloppeurActive,DonneeMaster modelMaster) {
+	public ModeDefenseur(int nbCase, int nbEssai, int nbCouleur, boolean modeDeveloppeurActive,
+			DonneeMaster modelMaster) {
 
 		LOGGER.trace("Instanciation du jeu en mode Défenseur");
 		this.setPreferredSize(new Dimension(1000, 740));
@@ -698,9 +699,7 @@ public class ModeDefenseur extends JPanel implements Observer {
 	 * Méthode qui met à jour la combinaison secrète chois par le joueur.
 	 * 
 	 * @param col - Colonne de la combinaison
-	 * 
 	 * @param couleurChoisie - Couleur choisie par le joueur
-	 * 
 	 * @param - codeCouleur - Code associé à une couleur : Expml Bleu = "0"...
 	 */
 	private void updateCombiSecrete(int col, ImageIcon couleurChoisie, String codeCouleur) {
@@ -736,7 +735,6 @@ public class ModeDefenseur extends JPanel implements Observer {
 	 * Méthode qui efface la combinaison secrete choisie par le joueur.
 	 * 
 	 * @param col - Colonne de la combinaison secrète
-	 * 
 	 * @param emplacementVide - Img de lemplacement vide
 	 */
 	private void effacerCombiSecrete(int col, ImageIcon emplacementVide) {
@@ -758,6 +756,8 @@ public class ModeDefenseur extends JPanel implements Observer {
 		propoSecreteManDefenseur = "";
 
 	}
+
+
 
 	/*
 	 * Pattern Observer - Méthode non utilisé dans cette classe.

@@ -1,7 +1,6 @@
 package ConsolePlusMoins.AbstractClass;
 
-   /************************MASTERMIND PLUS ET MOINS**************************
- * 
+/*
  * /**************************************************************************
  * 
  * Classe abstraite Joueur qui définit les méthodes relative aux classes Humain
@@ -21,9 +20,8 @@ public abstract class Joueur {
 
 	public String resulatPrecedent = "";
 
-    /*
-     * Constructeur de la classe Joueur.
-     */
+
+
 	public void Joueur() {
 	}
 

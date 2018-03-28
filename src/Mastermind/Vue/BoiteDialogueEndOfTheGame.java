@@ -19,8 +19,9 @@ import Mastermind.Model.DonneeMaster;
 
 /*************************************************************************
  * Classe qui s'inscrit donc dans la partie VUE du pattern MVC, boite de
- * dialogue qui permet au joueur de relancer la partie ou retourner sur la 
- * page d'accueil.
+ * dialogue qui permet au joueur de relancer la partie ou retourner sur la page
+ * d'accueil.
+ * 
  *************************************************************************/
 
 public class BoiteDialogueEndOfTheGame extends JDialog {
@@ -52,9 +53,7 @@ public class BoiteDialogueEndOfTheGame extends JDialog {
 			jrbQuitterApplication = new JRadioButton("Quitter l'application    ");
 
 	/**
-	 * 
 	 * Button Group permettant de regrouper les JRadioButton.
-	 * 
 	 */
 
 	private ButtonGroup bgChoix = new ButtonGroup();
@@ -89,11 +88,10 @@ public class BoiteDialogueEndOfTheGame extends JDialog {
 	/**
 	 * Constructeur de la classe BoiteDialogueEndOfTheGame.
 	 * 
-	 * @param parent composant parent. Cette variable sera null.
+	 * @param parent Composant parent. Cette variable sera null.
 	 * @param title Titre de la boite de dialogue.
-	 * @param modal Modalité de la boite de dialogue. 
-	 * On optera pour une boite de dialogue modale.
-	 * 
+	 * @param modal Modalité de la boite de dialogue. On optera pour une boite de
+	 * dialogue modale.
 	 */
 
 	public BoiteDialogueEndOfTheGame(JFrame parent, String title, boolean modal) {
