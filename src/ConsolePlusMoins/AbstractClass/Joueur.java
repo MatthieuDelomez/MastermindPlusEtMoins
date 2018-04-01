@@ -1,5 +1,7 @@
 package ConsolePlusMoins.AbstractClass;
 
+import java.util.ArrayList;
+
 /*
  * /**************************************************************************
  * 
@@ -29,6 +31,15 @@ public abstract class Joueur {
 	 * Méthode qui consiste à proposer par un des deux joueurs.
 	 */
 	public void proposerNbr() {
-
+		
 	}
+		
+	/*
+	 * Méthode qui va consister à proposer un nombre à partir de Solutions Probables.
+	 */
+	public void parcourirListe(ArrayList listeArray) {
+		
+	}
+
+	
 }

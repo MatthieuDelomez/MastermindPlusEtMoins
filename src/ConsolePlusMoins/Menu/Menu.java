@@ -1,11 +1,12 @@
 package ConsolePlusMoins.Menu;
 
-import java.io.InputStream;
 
+import java.io.InputStream;
 import java.util.Properties;
 import java.util.Scanner;
 
 import ConsolePlusMoins.AbstractClass.Erreur;
+import ConsolePlusMoins.ClassFille.Mastermind;
 import ConsolePlusMoins.ClassFille.PlusMoins;
 import Mastermind.Model.DonneeMaster;
 import Mastermind.Observable.Observable;
@@ -39,6 +40,8 @@ public class Menu {
 	 * @see Erreur
 	 */
 	public Menu() {
+		
+		
 
 		byte choix = 0;
 		System.out.println("Bien le Bonjour !");
@@ -46,7 +49,7 @@ public class Menu {
 		do {
 			System.out.println("\nÀ quoi souhaitez-vous jouer ?");
 
-			System.out.println("\n1· Plus ou moins \n2· Jouez en mode graphique \n3. Quittez");
+			System.out.println("\n1· Plus ou moins \n2· Mastermind \n3. Mode Swing \n4. Quittez");
 
 			Scanner sc = new Scanner(System.in);
 
@@ -77,7 +80,18 @@ public class Menu {
 				break;
 
 			case 2:
+				
+				Mastermind master = new Mastermind();
+				
+			    choix = 0;
+			    
+			    break;
+			    
+			case 3:
 
+				/*
+				 * Mode swing.
+				 */
 				String strModeDeveloppeurActiveConsole = "";
 				boolean modeDeveloppeurActiveConsole = false;
 
@@ -102,16 +116,16 @@ public class Menu {
 
 				break;
 
-			case 3:
+			case 4:
 
 				System.out.println("À bientôt !");
-
+				
 				break;
 
 			default:
 				Erreur.erreurChoix();
 
 			}
-		} while (choix != 1 && choix != 2 && choix != 3 && choix != 4);
+		} while (choix != 1 && choix != 2 && choix != 3 && choix != 4 && choix !=5);
 	}
 }

@@ -1,9 +1,13 @@
 package ConsolePlusMoins.ClassFille;
 
+import java.util.ArrayList;
 import java.util.Random;
 
 import ConsolePlusMoins.AbstractClass.Jeu;
 import ConsolePlusMoins.AbstractClass.Joueur;
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 /*
  * /*************************************************************************
@@ -14,6 +18,8 @@ import ConsolePlusMoins.AbstractClass.Joueur;
  *************************************************************************/
 
 public class Cpu extends Joueur {
+
+	private static final Logger LOGGER = LogManager.getLogger();
 
 	/*
 	 * Variable de type String correspondant au tour précédent.
@@ -31,6 +37,7 @@ public class Cpu extends Joueur {
 	 * proposer un nombre qui sera généré de facon aléatoire.
 	 */
 	public void proposerNbr() {
+
 		System.out.println("Proposition du Cpu : ");
 
 		if (Jeu.compteur == 1) {
@@ -81,6 +88,25 @@ public class Cpu extends Joueur {
 			System.out.println(proposition);
 
 		}
+	}
+
+	/*
+	 * Création de la méthode que nous utiliserons dans le jeu Mastermind.
+	 * 
+	 * Qui nous servira à pouvoir parcourir la listeArray pour pouvoir générer un
+	 * code
+	 * 
+	 * de manière aléatoire.
+	 */
+	public void parcourirListe(ArrayList listeArray) {
+
+		Random random = new Random();
+
+		int index = random.nextInt(listeArray.size());
+
+		proposition = (String) listeArray.get(index);
+
+		LOGGER.info("Nombre proposé parmi la liste de solutions : " + proposition);
 
 	}
 
