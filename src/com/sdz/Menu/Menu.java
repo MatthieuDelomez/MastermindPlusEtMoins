@@ -33,7 +33,7 @@ public class Menu {
 	/*
 	 * Constructeur de la classe Jeu.
 	 * 
-	 * @param byte choix - Correspond ‡ la rÈponse enregistrÈe.
+	 * @param byte choix - Correspond √† la r√©ponse enregistr√©e.
 	 * @see Erreur
 	 */
 	public Menu() {
@@ -44,14 +44,14 @@ public class Menu {
 		System.out.println("Bien le Bonjour !");
 
 		do {
-			System.out.println("\n¿ quoi souhaitez-vous jouer ?");
+			System.out.println("\n A quoi souhaitez-vous jouer ?");
 
-			System.out.println("\n1∑ Plus ou moins \n2∑ Mastermind \n3. Quittez");
+			System.out.println("\n1. Plus ou moins \n2. Mastermind \n3. Quittez");
 
 			Scanner sc = new Scanner(System.in);
 
 			/*
-			 * Si l'entrÈe saisie n'est pas un byte.
+			 * Si l'entr√©e saisie n'est pas un byte.
 			 */
 			if (!sc.hasNextByte()) {
 
@@ -65,7 +65,7 @@ public class Menu {
 			choix = sc.nextByte();
 
 			/*
-			 * On initialise les choix possible via le menu crÈe.
+			 * On initialise les choix possible via le menu cr√©e.
 			 */
 			switch (choix) {
 
@@ -85,38 +85,9 @@ public class Menu {
 			    break;
 			    
 
-				/*
-				 * Mode swing.
-				 */
-				/*
-				String strModeDeveloppeurActiveConsole = "";
-				boolean modeDeveloppeurActiveConsole = false;
-
-				do {
-
-					System.out.println("Souhaitez vous activez le mode developpeur(O pour oui/ N pour non) ? :");
-					strModeDeveloppeurActiveConsole = sc.nextLine();
-				}
-
-				while (!strModeDeveloppeurActiveConsole.equals("O") && !strModeDeveloppeurActiveConsole.equals("N"));
-
-				if (strModeDeveloppeurActiveConsole.equals("O"))
-					modeDeveloppeurActiveConsole = true;
-
-				else
-					modeDeveloppeurActiveConsole = false;
-
-				Observable Obs = new DonneeMaster();
-
-				// Instanciation de la fenetre principale.
-				new Fenetre(Obs, modeDeveloppeurActiveConsole);
-
-				break;
-				*/
-
 			case 3:
 
-				System.out.println("¿ bientÙt !");
+				System.out.println("A bient√¥t !");
 				
 				break;
 

@@ -10,7 +10,7 @@ import com.sdz.AbstractClass.Joueur;
 /**
  * /*************************************************************************
  * 
- * Classe fille correspondant à l'utilisateur héritant de la classe mére Joueur.
+ * Classe fille correspondant Ã  l'utilisateur hÃ©ritant de la classe mÃ¨re Joueur.
  * 
  * @author Delomez Matthieu
  *************************************************************************/
@@ -25,7 +25,7 @@ public class Humain extends Joueur {
 	}
 
 	/*
-	 * Méthodes qui retourne la proposition du joueur dans le mode console.
+	 * MÃ©thodes qui retourne la proposition du joueur dans le mode console.
 	 */
 	public void proposerNbr() {
 

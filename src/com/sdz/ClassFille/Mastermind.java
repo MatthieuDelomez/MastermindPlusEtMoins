@@ -9,8 +9,6 @@ import org.apache.logging.log4j.Logger;
 
 import com.sdz.AbstractClass.Jeu;
 import com.sdz.AbstractClass.Joueur;
-import com.sdz.ClassFille.Cpu;
-import com.sdz.ClassFille.Humain;
 
 public class Mastermind extends Jeu {
 
@@ -20,7 +18,7 @@ public class Mastermind extends Jeu {
 	private static final Logger LOGGER = LogManager.getLogger();
 
 	/*
-	 * Nous allons créer une liste de collection Set, Sans doublon.
+	 * Nous allons crÃ©er une liste de collection Set, Sans doublon.
 	 */
 	HashSet listeSet;
 
@@ -28,20 +26,20 @@ public class Mastermind extends Jeu {
 	byte pionPresentMalPlace = 0;
 
 	/*
-	 * Création des variables qui serviront à stocker le résultat.
+	 * CrÃ©ation des variables qui serviront Ã  stocker le rÃ©sultat.
 	 */
 	int goodresult = 0;
 	int badResult = 0;
 
 	/*
-	 * Création d'une arrayList qui servira à suprimer les solutions pendant la
+	 * CrÃ©ation d'une arrayList qui servira Ã  suprimer les solutions pendant la
 	 * partie.
 	 */
 	ArrayList listeArray;
 
 	/*
 	 * Constructeur de la classe Mastermind qui va nous permettre de charger les
-	 * paramètres du jeu via la classe Jeu et le fichier config.properties.
+	 * paramï¿½tres du jeu via la classe Jeu et le fichier config.properties.
 	 * 
 	 * @See Jeu - LongueurCodeSecret, coupsMax.
 	 */
@@ -51,11 +49,11 @@ public class Mastermind extends Jeu {
 
 		LongueurCodeSecret = Integer.valueOf(prop.getProperty("longueur"));
 		coupsMax = Integer.valueOf(prop.getProperty("coupsMax"));
-		LOGGER.info("Longueur du code secret et nombre de coups sera chargés via le fichier config.properties");
+		LOGGER.info("Longueur du code secret et nombre de coups sera chargÃ©s via le fichier config.properties");
 	}
 
 	/*
-	 * Création du mode Challenger.
+	 * CrÃ©ation du mode Challenger.
 	 * 
 	 * @see Jeu
 	 * 
@@ -63,9 +61,9 @@ public class Mastermind extends Jeu {
 	 * 
 	 * @param initCompteur
 	 * 
-	 * @param générerCodeSecret
+	 * @param gÃ©nÃ©rerCodeSecret
 	 * 
-	 * @générerListeSoluce
+	 * @param gÃ©nÃ©rerListeSoluce
 	 */
 	public void challenger() {
 
@@ -73,7 +71,11 @@ public class Mastermind extends Jeu {
 		System.out.println("Welcome To Challenger Mode");
 
 		/*
-		 * On charge les méthodes de la classe mère.
+		 * On charge les mÃ©thodes de la classe mÃ¨re.
+		 * 
+		 * @param initCompteur
+		 * 
+		 * @param genererNbrSecret
 		 */
 		initCompteur();
 		genererNbrSecret();
@@ -82,13 +84,13 @@ public class Mastermind extends Jeu {
 		joueur1 = new Humain();
 
 		/*
-		 * Log de confirmation que le joueur à bien été chargé.
+		 * Log de confirmation que le joueur Ã  bien Ã©tÃ© chargÃ©.
 		 */
-		LOGGER.info("Joueur 1 défini comme un humain");
+		LOGGER.info("Joueur 1 defini comme un humain");
 
 		/*
-		 * On effectue une boucle grace à un do , while qui défini les règles et le
-		 * déroulement du programme.
+		 * On effectue une boucle grace Ã  un do , while qui dÃ©fini les rÃ¨gles et le
+		 * dï¿½roulement du programme.
 		 * 
 		 * Un tour de boucle rajoute +1 au compteur.
 		 */
@@ -103,16 +105,16 @@ public class Mastermind extends Jeu {
 			compteur++;
 		}
 
-		// Si les pions bien placés sont inférieur au Code secret et que
-		// compteur est inférieur à coupsMax + 1
-		// Invoquer la méthode de fin de partie.
+		// Si les pions bien placÃ©s sont infÃ©rieur au Code secret et que
+		// compteur est infÃ©rieur Ã  coupsMax + 1
+		// Invoquer la mÃ©thode de fin de partie.
 		while (pionBienPlace < nbrSecret.length() && compteur < coupsMax + 1);
 		finPartie("Vous avez");
 
 	}
 
 	/*
-	 * Création du mode Defenseur.
+	 * CrÃ©ation du mode Defenseur.
 	 * 
 	 * @see Jeu
 	 * 
@@ -126,11 +128,11 @@ public class Mastermind extends Jeu {
 	 * 
 	 * @param proposerNbr
 	 * 
-	 * @générer afficherScore
+	 * @param afficherScore
 	 */
 	public void defenseur() {
 
-		LOGGER.info("Chargement du mode défenseur");
+		LOGGER.info("Chargement du mode dÃ©fenseur");
 		System.out.println("Welcome To Defense Mode");
 
 		initCompteur();
@@ -140,19 +142,19 @@ public class Mastermind extends Jeu {
 		joueur1 = new Humain();
 
 		/*
-		 * Log de confirmation que le joueur1 à bien été chargé.
+		 * Log de confirmation que le joueur1 Ã  bien Ã©tÃ© chargÃ©.
 		 */
-		LOGGER.info("Joueur 1 défini comme un humain");
+		LOGGER.info("Joueur 1 dÃ©fini comme un humain");
 
 		joueur2 = new Cpu();
 
 		/*
-		 * Log de confirmation que le joueur2 à bien été chargé.
+		 * Log de confirmation que le joueur2 Ã  bien Ã©tÃ© chargÃ©.
 		 */
-		LOGGER.info("Joueur 1 défini comme un ordinateur");
+		LOGGER.info("Joueur 1 dÃ©fini comme un ordinateur");
 
 		/*
-		 * On charge la méthode proposerNbr, pour ensuite pouvoir la définir en tant que
+		 * On charge la mÃ©thode proposerNbr, pour ensuite pouvoir la dÃ©finir en tant que
 		 * NombreSecret.
 		 */
 		joueur1.proposerNbr();
@@ -162,8 +164,8 @@ public class Mastermind extends Jeu {
 		System.out.println("Le code secret est : " + nbrSecret);
 
 		/*
-		 * On effectue une boucle grace à un do , while qui défini les règles et le
-		 * déroulement du programme.
+		 * On effectue une boucle grace Ã  un do , while qui dÃ©fini les rÃ¨gles et le
+		 * dÃ©roulement du programme.
 		 * 
 		 * Un tour de boucle rajoute +1 au compteur.
 		 * 
@@ -173,10 +175,14 @@ public class Mastermind extends Jeu {
 			devMode();
 			resetSoluce();
 			afficherScore();
+			// On fait appel Ã  la mÃ©thode parcourirListe qui se trouve dans le classe
+			// Joueur.
 			joueur2.parcourirListe(listeArray);
 
 			System.out.println(Joueur.proposition);
 			comparerNbr(joueur2);
+
+			joueur2.resulatPrecedent = resultat;
 
 			afficherScore();
 			enregistrerScore();
@@ -187,15 +193,15 @@ public class Mastermind extends Jeu {
 		}
 
 		// Effectuer les conditions d'arrets de la boucle do
-		// Si le bon resulat est inférieur au code secret et que le compteur
-		// ne dépasse pas coupsMax + 1 invoquer la méthode de fin de partie
-		while (goodresult < nbrSecret.length() && compteur < coupsMax + 1);
-		finPartie("L'ordinateur à :");
+		// Si le bon resulat est infÃ©rieur au code secret et que le compteur
+		// ne dÃ©passe pas coupsMax + 1 invoquer la mÃ©thode de fin de partie
+	 while (!String.valueOf(Joueur.proposition).equals(nbrSecret) && compteur < coupsMax + 1);
+		finPartie("L'ordinateur ï¿½ :");
 
 	}
 
 	/*
-	 * Création du mode Duel.
+	 * CrÃ©ation du mode Duel.
 	 * 
 	 * @see Jeu
 	 * 
@@ -226,125 +232,133 @@ public class Mastermind extends Jeu {
 
 		genererNbrSecret();
 
-		// Même méthodde utilisée dans le mode défenseur
+		// MÃªme mÃ©thodde utilisÃ©e dans le mode dÃ©fenseur
 		codeJoueur1 = nbrSecret;
 
-		// On défini le joueur 1 comme un humain
+		// On dÃ©fini le joueur 1 comme un humain
 		joueur1 = new Humain();
 
 		/*
-		 * Log de confirmation que le joueur1 à bien été chargé.
+		 * Log de confirmation que le joueur1 Ã  bien Ã©tÃ© chargÃ©.
 		 */
-		LOGGER.info("Joueur 1 défini comme un humain");
-		
+		LOGGER.info("Joueur 1 dÃ©fini comme un humain");
+
 		joueur1.proposerNbr();
-		
+
 		codeJoueur2 = Joueur.proposition;
-		
+
 		joueur2 = new Cpu();
-		
+
 		/*
-		 * Log de confirmation que le joueur1 à bien été chargé.
+		 * Log de confirmation que le joueur1 Ã  bien Ã©tÃ© chargÃ©.
 		 */
-		LOGGER.info("Joueur 2 défini comme un ordinateur");
-		
+		LOGGER.info("Joueur 2 dÃ©fini comme un ordinateur");
+
 		/*
-		 * On effectue une boucle grace à un do , while qui défini les règles et le
-		 * déroulement du programme.
+		 * On effectue une boucle grace Ã  un do , while qui dÃ©fini les rÃ¨gles et le
+		 * dÃ©roulement du programme.
 		 * 
 		 * Un tour de boucle rajoute +1 au compteur.
 		 * 
 		 */
 		do {
-			
+
 			resetSoluce();
 			nbrSecret = codeJoueur1;
 			devMode();
-			System.out.println("A vous :");
-			afficherScore();
+			afficherCompteur();
+
 			
+			System.out.println("A vous :");
+			joueur1.proposerNbr();
+			comparerNbr(joueur1);
+			afficherScore();
+
 			// On rajoute une codition if la proposition du Joueur 1 ou 2
-			// est égal au codeSecret alors
+			// est Ã©gal au codeSecret alors
 			// On ajoute +1 au compteur et on sort de la boucle
-			if(String.valueOf(Joueur.proposition).equals(nbrSecret)) {
+			if (String.valueOf(Joueur.proposition).equals(nbrSecret)) {
 				compteur++;
 				break;
 			}
-			
+
 			/*
 			 * On programme le comportement du Joueur2.
 			 */
 			nbrSecret = codeJoueur2;
 			devMode();
 			System.out.println("A l'ordinateur :");
-			
+
 			resetSoluce();
 			afficherScore();
 			joueur2.parcourirListe(listeArray);
-			
+
 			System.out.println(Joueur.proposition);
-			
+
 			comparerNbr(joueur2);
+			joueur2.resulatPrecedent = resultat;
+
 			afficherScore();
 			enregistrerScore();
-			
+
 			nettoyer();
 			compteur++;
 		}
-		
+
 		// Effectuer les conditions d'arrets des deux boucles
-		// si Code secret = codeJoueur1 alors on invoque la méthode de fin de partie
-		// Joueur 1 à gagne contre joueur2
-		
-		//Par contre si NbrSecret = codeJoueur2
+		// si Code secret = codeJoueur1 alors on invoque la methode de fin de partie
+		// Joueur 1  gagne contre joueur2
+
+		// Par contre si NbrSecret = codeJoueur2
 		// Alors Joueur2 gagne contre joueur1
-		while (!String.valueOf(Joueur.proposition).equals(nbrSecret) && compteur < coupsMax +1);
-                        if(nbrSecret == codeJoueur1)
-    	                finPartie("Félicitation vous avez gagné ");
-		
-        else if(nbrSecret == codeJoueur2)
-    	                finPartie("Désolé mais vous avez perdu");
+		while (!String.valueOf(Joueur.proposition).equals(nbrSecret) && compteur < coupsMax + 1);
+		if (nbrSecret == codeJoueur1)
+			finPartie("FÃ©licitation vous avez gagnÃ© ");
+
+		else if (nbrSecret == codeJoueur2)
+			finPartie("DÃ©solÃ© mais vous avez perdu");
 
 	}
 
 	/*
-	 * Création de la méthode qui nous servira à générer une liste de solutions
-	 * possibles en fonction des réponses que nous allons donner.
+	 * CrÃ©ation de la mÃ©thode qui nous servira Ã  gÃ©nÃ©rer une liste de solutions
+	 * possibles en fonction des rï¿½ponses que nous allons donner.
 	 */
 	public void genererListeSoluce() {
 
-	// Nous faisons appel à l'objet listeSet
-	listeSet = new HashSet();
-	
-	int NbrMaximumUtilises = nbrUtilises.length - 1;
-	
-	// Création d'un objet Random
-    Random random = new Random();
-	
-	// On associe le tableau chiffreCodeSecret à la valeur de la variable LongueurCodeSecret
-	int chiffreCodeSecret[] = new int[LongueurCodeSecret];
-	
-	/*
-	 * Boucle do/while pour générer un chiffre aléatoire jusqu'a atteindre la longueur Max
-	 */
-	do {
-		
-		for(int i = 0; i < LongueurCodeSecret; i++){
-			chiffreCodeSecret[i] = random.nextInt(NbrMaximumUtilises +1);
-			nbrSecret += chiffreCodeSecret[i];
+		// Nous faisons appel Ã  l'objet listeSet
+		listeSet = new HashSet();
+
+		int NbrMaximumUtilises = nbrUtilises.length - 1;
+
+		// CrÃ©ation d'un objet Random
+		Random random = new Random();
+
+		// On associe le tableau chiffreCodeSecret Ã  la valeur de la variable
+		// LongueurCodeSecret
+		int chiffreCodeSecret[] = new int[LongueurCodeSecret];
+
+		/*
+		 * Boucle do/while pour gÃ©nÃ©rer un chiffre alÃ©atoire jusqu'a atteindre la
+		 * longueur Max
+		 */
+		do {
+
+			for (int i = 0; i < LongueurCodeSecret; i++) {
+				chiffreCodeSecret[i] = random.nextInt(NbrMaximumUtilises + 1);
+				nbrSecret += chiffreCodeSecret[i];
+			}
+
+			listeSet.add(nbrSecret);
+			nbrSecret = "";
+
 		}
-		
-		listeSet.add(nbrSecret);
-		nbrSecret ="";
-	    
-	    }
-	
-	while (listeSet.size() < Math.pow(nbrUtilises.length, LongueurCodeSecret));
-			
-	
-	listeArray = new ArrayList(listeSet);
-	
-	LOGGER.info("Les solutions possibles on été générée");
+
+		while (listeSet.size() < Math.pow(nbrUtilises.length, LongueurCodeSecret));
+
+		listeArray = new ArrayList(listeSet);
+
+		LOGGER.info("Les solutions possibles ont Ã©taient gÃ©nerÃ©es");
 	}
 
 	public void comparerNbr(Joueur joueur) {
@@ -357,10 +371,10 @@ public class Mastermind extends Jeu {
 			int chiffreCodeSecret = Character.getNumericValue(nbrSecret.charAt(i));
 
 			/*
-			 * Conditions de la méthode de comparaison.
+			 * Conditions de la mÃ©thode de comparaison.
 			 * 
-			 * Si le code proposé est egal au codeSecret alors le pion est bien placé Sinon
-			 * présent mais mal placé Ou alors Null.
+			 * Si le code proposÃ© est egal au codeSecret alors le pion est bien placÃ© Sinon
+			 * prï¿½sent mais mal placÃ© Ou alors Null.
 			 */
 			if (codePropose == chiffreCodeSecret)
 				pionBienPlace++;
@@ -387,9 +401,10 @@ public class Mastermind extends Jeu {
 
 		if (pionBienPlace == nbrSecret.length())
 			pionPresentMalPlace = 0;
-		System.out.println(pionPresentMalPlace + " sont présent mais mal placés" + pionBienPlace
+		
+		System.out.println(pionPresentMalPlace + " sont prÃ©sent mais mal placÃ©s " + pionBienPlace
 
-				+ "pion Bien placés");
+				+ "pion Bien placÃ©s");
 	}
 
 	public void genererCodeSecret() {
@@ -406,19 +421,19 @@ public class Mastermind extends Jeu {
 
 		pionPresentMalPlace = 0;
 		pionBienPlace = 0;
-		LOGGER.info("Solutions remis à zero");
+		LOGGER.info("Solutions remis Ã  zero");
 
 	}
 
 	/*
-	 * Méthode qui consiste à éliminer tout les composant de la ArrayList qui ne
-	 * correspond pas à la proposition faite par l'ordinateur.
+	 * MÃ©thode qui consiste Ã  Ã©liminer tout les composant de la ArrayList qui ne
+	 * correspond pas Ã  la proposition faite par l'ordinateur.
 	 */
 	public void nettoyer() {
 
 		listeArray.remove(Joueur.proposition);
 
-		// Tant que la liste complète n'est pas parcourue on effectue des tours de
+		// Tant que la liste complÃ¨te n'est pas parcourue on effectue des tours de
 		// boucles
 		for (int i = 0; i < listeArray.size(); i++) {
 
@@ -450,12 +465,11 @@ public class Mastermind extends Jeu {
 				resetSoluce();
 		}
 
-		LOGGER.info("Combinaisons mauvaise sont retirées de la liste des solutions possibles");
+		LOGGER.info("Combinaisons mauvaise sont retirÃ©es de la liste des solutions possibles");
 	}
-	
+
 	public void enregistrerScore() {
 		goodresult = pionBienPlace;
 		badResult = pionPresentMalPlace;
 	}
 }
-

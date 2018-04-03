@@ -1,7 +1,6 @@
 package com.sdz.Main;
 
 import java.io.FileInputStream;
-import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
@@ -14,10 +13,11 @@ import com.sdz.Menu.Menu;
 
 
 
-    /* 
+ /* 
  * /*************************************************************************
  * Classe Main du programme.
  * 
+ * @see Menu
  * @author Delomez Matthieu
  *************************************************************************/
 
@@ -59,29 +59,7 @@ public class Main {
 
 		} catch (IOException ex) {
 
-			try {
 
-				// Si erreur, nous créons un nouveau fichier de config.
-				output = new FileOutputStream("config.properties");
-
-				/*
-				 * On définies les valeurs par défault.
-				 */
-				prop.setProperty("longueur", "10");
-				prop.setProperty("couleurs", "10");
-				prop.setProperty("coupsMax", "15");
-				prop.setProperty("modeDeveloppeur", "0");
-
-				LOGGER.trace(" Execption Properties");
-
-				/*
-				 * On sauvegarde la config à la racine du projet.
-				 */
-				prop.store(output, null);
-
-			} catch (IOException io) {
-
-				io.printStackTrace();
 
 			} finally {
 
@@ -117,7 +95,7 @@ public class Main {
 
 			}
 
-		}
+		
 
 		if (args.length > 0)
 
@@ -128,8 +106,8 @@ public class Main {
 			modDev = Integer.valueOf(prop.getProperty("modeDeveloppeur"));
 
 		/*
-		 * Création de l'objet Menu, pour de cette manière pouvoir choisir le mode de
-		 * jeu que l'on désire.
+		 * CrÃ©ation de l'objet Menu, pour de cette maniÃ©re pouvoir choisir le mode de
+		 * jeu que l'on dÃ©sire.
 		 */
 		Menu menu = new Menu();
 

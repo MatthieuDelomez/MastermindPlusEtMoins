@@ -4,8 +4,8 @@ package com.sdz.AbstractClass;
 
 /*************************************************************************
  * 
- * Classe abstraite servant à avertir l'utilisateur si une mauvaise saisie
- * ou manipulation à été faite.
+ * Classe abstraite servant Ã  avertir l'utilisateur si une mauvaise saisie
+ * ou manipulation Ã  Ã©tÃ© faite.
  * 
  * @author Delomez Matthieu
  *************************************************************************/
@@ -13,15 +13,15 @@ package com.sdz.AbstractClass;
 public abstract class Erreur {
 	
 	/*
-	 * Méthode servant à afficher si une entrée clavier ne correspond pas 
-	 * à un choix proposé.
+	 * MÃ©thode servant Ã  afficher si une entrÃ©e clavier ne correspond pas 
+	 * Ã  un choix proposÃ©.
 	 */
 	public static void erreurChoix() {
 		System.out.println("\nVeuillez choisir parmi les propositions.");
         }
 	
 	public static void erreurNbr() {
-		System.out.println("\nVeuillez entrer un nombre à " + Jeu.LongueurCodeSecret + " chiffres.");
+		System.out.println("\nVeuillez entrer un nombre " + Jeu.LongueurCodeSecret + " chiffres.");
 
 	}
 	

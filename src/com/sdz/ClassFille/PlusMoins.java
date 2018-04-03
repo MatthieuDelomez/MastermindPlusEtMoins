@@ -6,7 +6,7 @@ import com.sdz.AbstractClass.Joueur;
 /*
  * /**************************************************************************
  * 
- * Classe fille correspondant aux réglages desdifférents modes de jeu héritant
+ * Classe fille correspondant aux rÃ©glages des diffÃ©rents modes de jeu hÃ©ritant
  * de la classe Jeu.
  * 
  * @author Delomez Matthieu
@@ -36,7 +36,7 @@ public class PlusMoins extends Jeu {
 		joueur1 = new Humain();
 
 		/*
-		 * On effectue une boucle do{ tant que le code secret n'a pas été trouvé.
+		 * On effectue une boucle do{ tant que le code secret n'a pas Ã©tÃ© trouvÃ©.
 		 */
 		do {
 			devMode();
@@ -68,7 +68,7 @@ public class PlusMoins extends Jeu {
 		joueur2 = new Cpu();
 
 		/*
-		 * L'utilisateur est invité à entrer une combinaison à deviner.
+		 * L'utilisateur est invitï¿½ ï¿½ entrer une combinaison ï¿½ deviner.
 		 */
 		joueur1.proposerNbr();
 
@@ -92,7 +92,7 @@ public class PlusMoins extends Jeu {
 
 		} while (!String.valueOf(Joueur.proposition).equals(nbrSecret) && compteur < coupsMax + 1);
 
-		finPartie("L'ordinateur à ");
+		finPartie("L'ordinateur Ã  ");
 
 	}
 
@@ -109,14 +109,14 @@ public class PlusMoins extends Jeu {
 		genererNbrSecret();
 
 		/*
-		 * On stocke le nombre à deviner par le joueur dans une variable.
+		 * On stocke le nombre Ã  deviner par le joueur dans une variable.
 		 */
 		combinaisonJoueur1 = nbrSecret;
 
 		joueur1 = new Humain();
 
 		/*
-		 * L'utilisateur doit proposer une combinaison à deviner pour l'ordinateur.
+		 * L'utilisateur doit proposer une combinaison Ã  deviner pour l'ordinateur.
 		 */
 		joueur1.proposerNbr();
 
@@ -128,7 +128,7 @@ public class PlusMoins extends Jeu {
 		joueur2 = new Cpu();
 
 		/*
-		 * On initialise les paramètres du Joueur grace un un bloc do{ .
+		 * On initialise les paramï¿½tres du Joueur grace un un bloc do{ .
 		 */
 		do {
 
@@ -152,7 +152,7 @@ public class PlusMoins extends Jeu {
 			}
 
 			/*
-			 * Nous faisons de même avec l'ordinateur .
+			 * Nous faisons de mÃªme avec l'ordinateur .
 			 */
 			nbrSecret = combinaisonJoueur2;
 

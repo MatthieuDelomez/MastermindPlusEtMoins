@@ -12,7 +12,7 @@ import com.sdz.AbstractClass.Joueur;
 /*
  * /*************************************************************************
  * 
- * Classe fille correspondant à l'ordinateur héritant de la classe mére Joueur.
+ * Classe fille correspondant Ã  l'ordinateur hÃ©ritant de la classe mÃ¨re Joueur.
  * 
  * @author Delomez Matthieu
  *************************************************************************/
@@ -22,7 +22,7 @@ public class Cpu extends Joueur {
 	private static final Logger LOGGER = LogManager.getLogger();
 
 	/*
-	 * Variable de type String correspondant au tour précédent.
+	 * Variable de type String correspondant au tour prÃ©cÃ©dent.
 	 */
 	String tourPrecedent = "";
 
@@ -33,8 +33,8 @@ public class Cpu extends Joueur {
 	}
 
 	/*
-	 * Méthode pour mettre en place un algorithme pour que l'ordinateiur puisse nous
-	 * proposer un nombre qui sera généré de facon aléatoire.
+	 * MÃ©thode pour mettre en place un algorithme pour que l'ordinateiur puisse nous
+	 * proposer un nombre qui sera gÃ©nÃ©rÃ© de facon alÃ©atoire.
 	 */
 	public void proposerNbr() {
 
@@ -47,8 +47,8 @@ public class Cpu extends Joueur {
 			int chiffreNbrSecret[] = new int[Jeu.LongueurCodeSecret];
 
 			/*
-			 * On génére un chiffre de facon aléatoire pour ainsi atteindre la longueur
-			 * définie dans la longueur du code secret.
+			 * On gÃ©nÃ©re un chiffre de facon alÃ©atoire pour ainsi atteindre la longueur
+			 * dÃ©finie dans la longueur du code secret.
 			 */
 			for (int i = 0; i < Jeu.LongueurCodeSecret; i++) {
 				chiffreNbrSecret[i] = random.nextInt(9 + 1);
@@ -91,12 +91,12 @@ public class Cpu extends Joueur {
 	}
 
 	/*
-	 * Création de la méthode que nous utiliserons dans le jeu Mastermind.
+	 * CrÃ©ation de la mÃ©thode que nous utiliserons dans le jeu Mastermind.
 	 * 
-	 * Qui nous servira à pouvoir parcourir la listeArray pour pouvoir générer un
+	 * Qui nous servira Ã  pouvoir parcourir la listeArray pour pouvoir gÃ©nÃ©rer un
 	 * code
 	 * 
-	 * de manière aléatoire.
+	 * de maniÃ¨re alÃ©atoire.
 	 */
 	public void parcourirListe(ArrayList listeArray) {
 
@@ -106,7 +106,7 @@ public class Cpu extends Joueur {
 
 		proposition = (String) listeArray.get(index);
 
-		LOGGER.info("Nombre proposé parmi la liste de solutions : " + proposition);
+		LOGGER.info("Nombre proposÃ© parmi la liste de solutions : " + proposition);
 
 	}
 

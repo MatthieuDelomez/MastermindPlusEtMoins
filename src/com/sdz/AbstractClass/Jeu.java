@@ -12,7 +12,7 @@ import com.sdz.Main.Main;
 /**
  * /*************************************************************************
  * 
- * Classe abstraite Jeu qui dÈfinit les mÈthodes au bon fonctionnement du jeu
+ * Classe abstraite Jeu qui d√©finit les m√©thodes au bon fonctionnement du jeu
  * PlusOuMoins et Mastermind.
  * 
  * @author Delomez Matthieu
@@ -36,17 +36,17 @@ public abstract class Jeu {
 	protected String nomDuJeu;
 
 	/*
-	 * Variable static correspondant au resulat donnÈe.
+	 * Variable static correspondant au resulat donn√©e.
 	 */
 	protected static String resultat;
 
 	/*
-	 * Tableau d'entier static correspondant aux nombres utilisÈs.
+	 * Tableau d'entier static correspondant aux nombres utilis√©s.
 	 */
 	protected static int nbrUtilises[];
 
 	/*
-	 * Variable static de type int correspondant ‡ la longueur du code Secret.
+	 * Variable static de type int correspondant √† la longueur du code Secret qui sera configur√©e gr√¢ce au fichier config.properties.
 	 */
 	public static int LongueurCodeSecret;
 
@@ -56,7 +56,7 @@ public abstract class Jeu {
 	public static int compteur;
 
 	/*
-	 * Variable static correspondant au coup maximum autorisÈs et qui fera rÈfÈrence ‡ la configuration du fichier config.properties.
+	 * Variable static correspondant au coup maximum autoris√©s et qui fera r√©f√©rence √† la configuration du fichier config.properties.
 	 */
 	protected static int coupsMax;
 
@@ -102,7 +102,7 @@ public abstract class Jeu {
 			nbrUtilises = new int[Integer.valueOf(prop.getProperty("couleurs"))];
 
 			/*
-			 * Boucle pour incrÈmenter un coup/tour ‡ chaque tour de boucle.
+			 * Boucle pour incr√©menter un coup/tour √† chaque tour de boucle.
 			 */
 			for (int i = 0; i < Integer.valueOf(prop.getProperty("couleurs")); i++) {
 				nbrUtilises[i] = i;
@@ -127,8 +127,8 @@ public abstract class Jeu {
 		this.nomDuJeu = nomDuJeu;
 
 		/*
-		 * Variable correspondant au byte qui correspondra ‡ la rÈponse qui sera
-		 * appliquÈe au Scanner.
+		 * Variable correspondant au byte qui correspondra √† la r√©ponse qui sera
+		 * appliqu√©e au Scanner.
 		 */
 		byte choix = 0;
 
@@ -138,12 +138,12 @@ public abstract class Jeu {
 
 			System.out.println("\nChoisissez un mode de jeu :");
 
-			System.out.println("\n1∑ Challenger \n2∑ DÈfenseur \n3∑ Duel \n4∑ Quitter");
+			System.out.println("\n1 Challenger. \n2 D√©fenseur. \n3 Duel. \n4 Quitter.");
 
 			Scanner sc = new Scanner(System.in);
 
 			/*
-			 * Construction des diffÈrents modes de jeu. Si l'entrÈe n'est pas un byte alors
+			 * Construction des diff√©rents modes de jeu. Si l'entr√©e n'est pas un byte alors
 			 * invoquer la classe Erreur.
 			 * 
 			 * @see Erreur
@@ -181,7 +181,7 @@ public abstract class Jeu {
 	}
 
 	/*
-	 * MÈthodes relatives aux modes de jeu.
+	 * M√©thodes relatives aux modes de jeu.
 	 */
 	public void challenger() {
 	}
@@ -193,7 +193,7 @@ public abstract class Jeu {
 	}
 
 	/*
-	 * GÈnÈrer le code Secret.
+	 * G√©n√©rer le code Secret.
 	 */
 	public void genererNbrSecret() {
 
@@ -202,8 +202,8 @@ public abstract class Jeu {
 		int chiffreNbrSecret[] = new int[LongueurCodeSecret];
 
 		/*
-		 * Tour de boucle pour gÈnÈrer un chiffre alÈatoirement pour atteindre la
-		 * longueur qui est dÈfinie dans la variable LongueurCodeSecret.
+		 * Tour de boucle pour g√©n√©rer un chiffre al√©atoirement pour atteindre la
+		 * longueur qui est d√©finie dans la variable LongueurCodeSecret.
 		 */
 		for (int i = 0; i < LongueurCodeSecret; i++) {
 			chiffreNbrSecret[i] = random.nextInt(9 + 1);
@@ -214,7 +214,7 @@ public abstract class Jeu {
 	}
 
 	/*
-	 * MÈthode servant ‡ retourner le nom du jeu qui ‡ ÈtÈ selectionner par
+	 * M√©thode servant √† retourner le nom du jeu qui √† √©t√© selectionner par
 	 * l'utilisateur.
 	 */
 	public String afficherNom() {
@@ -236,7 +236,7 @@ public abstract class Jeu {
 			int chiffrePropo = Character.getNumericValue(secretPropo.charAt(i));
 			int chiffreNbrSecret = Character.getNumericValue(nbrSecret.charAt(i));
 			/*
-			 * On gÈre les rÈponse qui seront donnÈes par le Cpu ou le Joueur.
+			 * On g√®re les r√©ponse qui seront donn√©es par le Cpu ou le Joueur.
 			 * 
 			 * 
 			 */
@@ -256,21 +256,21 @@ public abstract class Jeu {
 	}
 
 	/*
-	 * On gÈre la fin de partie avec les critËres pour gagner ou perdre.
+	 * On g√®re la fin de partie avec les crit√®res pour gagner ou perdre.
 	 * 
 	 * @param compteur - Score
 	 * 
-	 * @param coupsMax - coups maximum autorisÈs.
+	 * @param coupsMax - coup maximum autoris√©s.
 	 */
 	public void finPartie(String vainqueur) {
 		if (compteur >= coupsMax && !Joueur.proposition.equals(nbrSecret))
 			System.out.println(
 
-					"Vous avez atteint la limite de coups ===>" + coupsMax + "<=== ! Le nombre mystËre Ètait : "
+					"Vous avez atteint la limite de coups ===>" + coupsMax + "<=== ! Le nombre myst√®re √©tait : "
 							+ nbrSecret + ".");
 
 		else
-			System.out.println(vainqueur + " trouvÈ le code secret en " + (compteur - 1) + " coups !");
+			System.out.println(vainqueur + " trouv√© le code secret en " + (compteur - 1) + " coups !");
 	}
 
 	/*
@@ -284,7 +284,7 @@ public abstract class Jeu {
 	 * Affichage du compteur.
 	 */
 	public void afficherCompteur() {
-		System.out.println("Coups n∞" + (compteur));
+		System.out.println("Coups n¬∞" + (compteur));
 	}
 
 	/*
@@ -292,13 +292,13 @@ public abstract class Jeu {
 	 */
 
 	/*
-	 * Initialisation du mode dÈveloppeur.
+	 * Initialisation du mode dÔøΩveloppeur.
 	 */
 	public void devMode() {
 		if (Main.modDev == 1)
 
 		{
-			System.out.println("[Mode dÈveloppeur] Le nombre mystËre est : " + nbrSecret);
+			System.out.println("[Mode d√©veloppeur] Le nombre myst√®re est : " + nbrSecret);
 
 		}
 
