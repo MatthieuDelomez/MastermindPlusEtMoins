@@ -2,7 +2,7 @@
 
 # Mettez votre logique à l'épreuve:
 
-. Ce projet consiste à recrer le jeu Mastermind en deux variantes.
+. Ce projet consiste à recréer le jeu Mastermind en deux variantes.
 
              . Mastermind +/- 
              . Mastermind classique 
