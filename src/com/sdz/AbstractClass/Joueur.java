@@ -5,7 +5,7 @@ import java.util.ArrayList;
 /*
  * /**************************************************************************
  * 
- * Classe abstraite Joueur qui définit les méthodes relative aux classes Humain
+ * Classe abstraite Joueur qui dï¿½finit les mï¿½thodes relative aux classes Humain
  * et Cpu.
  * 
  * @author Delomez Matthieu
@@ -14,7 +14,7 @@ import java.util.ArrayList;
 public abstract class Joueur {
 
 	/*
-	 * Instanciation des variables qui seront liés aux classes Humain et Cpu
+	 * Instanciation des variables qui seront liï¿½s aux classes Humain et Cpu
 	 */
 	public static String proposition;
 
@@ -26,14 +26,14 @@ public abstract class Joueur {
 	}
 
 	/*
-	 * Méthode qui consiste à proposer par un des deux joueurs.
+	 * Mï¿½thode qui consiste ï¿½ proposer par un des deux joueurs.
 	 */
 	public void proposerNbr() {
 
 	}
 
 	/*
-	 * Méthode qui va consister à proposer un nombre à partir de Solutions
+	 * Mï¿½thode qui va consister ï¿½ proposer un nombre ï¿½ partir des Solutions
 	 * Probables.
 	 */
 	public void parcourirListe(ArrayList listeArray) {

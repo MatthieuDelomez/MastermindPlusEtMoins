@@ -62,6 +62,8 @@ public class PlusMoins extends Jeu {
 		System.out.println("********MODE DEFENSEUR********");
 
 		initCompteur();
+		
+
 
 		joueur1 = new Humain();
 
@@ -73,13 +75,15 @@ public class PlusMoins extends Jeu {
 		joueur1.proposerNbr();
 
 		nbrSecret = Joueur.proposition;
+		
+		
 
 		System.out.println("Le code secret est :" + nbrSecret + ".\n");
 
 		do {
 
 			devMode();
-
+			
 			afficherCompteur();
 
 			joueur2.proposerNbr();
@@ -90,7 +94,7 @@ public class PlusMoins extends Jeu {
 
 			compteur++;
 
-		} while (!String.valueOf(Joueur.proposition).equals(nbrSecret) && compteur < coupsMax + 1);
+		} while (!String.valueOf(Cpu.proposition).equals(nbrSecret) && compteur < coupsMax + 1);
 
 		finPartie("L'ordinateur à ");
 

@@ -1,6 +1,7 @@
 package com.sdz.ClassFille;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Random;
 
@@ -39,7 +40,7 @@ public class Mastermind extends Jeu {
 
 	/*
 	 * Constructeur de la classe Mastermind qui va nous permettre de charger les
-	 * param�tres du jeu via la classe Jeu et le fichier config.properties.
+	 * paramtres du jeu via la classe Jeu et le fichier config.properties.
 	 * 
 	 * @See Jeu - LongueurCodeSecret, coupsMax.
 	 */
@@ -195,7 +196,7 @@ public class Mastermind extends Jeu {
 		// Effectuer les conditions d'arrets de la boucle do
 		// Si le bon resulat est inférieur au code secret et que le compteur
 		// ne dépasse pas coupsMax + 1 invoquer la méthode de fin de partie
-	 while (!String.valueOf(Joueur.proposition).equals(nbrSecret) && compteur < coupsMax + 1);
+		while (!String.valueOf(Joueur.proposition).equals(nbrSecret) && compteur < coupsMax + 1);
 		finPartie("L'ordinateur � :");
 
 	}
@@ -268,7 +269,6 @@ public class Mastermind extends Jeu {
 			devMode();
 			afficherCompteur();
 
-			
 			System.out.println("A vous :");
 			joueur1.proposerNbr();
 			comparerNbr(joueur1);
@@ -290,7 +290,6 @@ public class Mastermind extends Jeu {
 			System.out.println("A l'ordinateur :");
 
 			resetSoluce();
-			afficherScore();
 			joueur2.parcourirListe(listeArray);
 
 			System.out.println(Joueur.proposition);
@@ -307,7 +306,7 @@ public class Mastermind extends Jeu {
 
 		// Effectuer les conditions d'arrets des deux boucles
 		// si Code secret = codeJoueur1 alors on invoque la methode de fin de partie
-		// Joueur 1  gagne contre joueur2
+		// Joueur 1 gagne contre joueur2
 
 		// Par contre si NbrSecret = codeJoueur2
 		// Alors Joueur2 gagne contre joueur1
@@ -325,40 +324,35 @@ public class Mastermind extends Jeu {
 	 * possibles en fonction des r�ponses que nous allons donner.
 	 */
 	public void genererListeSoluce() {
-
+		
 		// Nous faisons appel à l'objet listeSet
+
 		listeSet = new HashSet();
+		
+		double chiffreCodeSecret = LongueurCodeSecret;
+		double NbrMaximumUtilises = nbrUtilises.length - 1;
 
-		int NbrMaximumUtilises = nbrUtilises.length - 1;
-
-		// Création d'un objet Random
-		Random random = new Random();
-
-		// On associe le tableau chiffreCodeSecret à la valeur de la variable
-		// LongueurCodeSecret
-		int chiffreCodeSecret[] = new int[LongueurCodeSecret];
-
-		/*
-		 * Boucle do/while pour générer un chiffre aléatoire jusqu'a atteindre la
-		 * longueur Max
-		 */
-		do {
-
-			for (int i = 0; i < LongueurCodeSecret; i++) {
-				chiffreCodeSecret[i] = random.nextInt(NbrMaximumUtilises + 1);
-				nbrSecret += chiffreCodeSecret[i];
-			}
-
+		
+		nbrSecret = "";
+		
+		
+		for(int i = 0; i < Math.pow(nbrUtilises.length, LongueurCodeSecret); i++) {
+			
+			nbrSecret = String.format("%1$" + LongueurCodeSecret + "s", i).replace(' ', '0');
+			
+			System.out.println("-i " + nbrSecret);
 			listeSet.add(nbrSecret);
-			nbrSecret = "";
+			listeArray=new ArrayList(listeSet);
+
 
 		}
+		
 
-		while (listeSet.size() < Math.pow(nbrUtilises.length, LongueurCodeSecret));
+	LOGGER.info("Les solutions possibles ont étaient génerées");
 
-		listeArray = new ArrayList(listeSet);
+	
 
-		LOGGER.info("Les solutions possibles ont étaient génerées");
+
 	}
 
 	public void comparerNbr(Joueur joueur) {
@@ -401,7 +395,7 @@ public class Mastermind extends Jeu {
 
 		if (pionBienPlace == nbrSecret.length())
 			pionPresentMalPlace = 0;
-		
+
 		System.out.println(pionPresentMalPlace + " sont présent mais mal placés " + pionBienPlace
 
 				+ "pion Bien placés");
