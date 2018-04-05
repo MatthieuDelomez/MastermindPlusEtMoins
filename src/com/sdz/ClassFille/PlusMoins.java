@@ -3,17 +3,29 @@ package com.sdz.ClassFille;
 import com.sdz.AbstractClass.Jeu;
 import com.sdz.AbstractClass.Joueur;
 
+/******************************** PLUSMOINS *******************************/
+
 /*
  * /**************************************************************************
+ * Classe Fille, correspondant à l'instanciation des modes de jeu du Mastermind
+ * PlusMoins. Et elle comprend les programmes et méthodes au bon déroulement du
+ * jeu.
  * 
- * Classe fille correspondant aux réglages des différents modes de jeu héritant
- * de la classe Jeu.
+ * @see Jeu.
  * 
  * @author Delomez Matthieu
- *************************************************************************/
+ ****************************************************************************/
 
 public class PlusMoins extends Jeu {
 
+	/*
+	 * Constructeur de la classe PlusMoins. Nous allons assimiler les variables de
+	 * la classe Jeu à celles du fichier config.properties
+	 * 
+	 * @param LongueurCodeSecret
+	 * 
+	 * @param coupsMax
+	 */
 	public PlusMoins() {
 
 		super("\n  *******PLUS OU MOINS******");
@@ -24,6 +36,12 @@ public class PlusMoins extends Jeu {
 
 	}
 
+	/*
+	 * Méthode qui va se charger du comportement du programme dans le mode
+	 * Challenger.
+	 * 
+	 * @see com.sdz.AbstractClass.Jeu#challenger()
+	 */
 
 	public void challenger() {
 
@@ -56,34 +74,37 @@ public class PlusMoins extends Jeu {
 		finPartie("Vous avez ==>");
 	}
 
+	/*
+	 * Méthode qui va se charger du comportement du programme dans le mode
+	 * Defenseur.
+	 * 
+	 * @see com.sdz.AbstractClass.Jeu#defenseur()
+	 */
 
 	public void defenseur() {
 
 		System.out.println("********MODE DEFENSEUR********");
 
 		initCompteur();
-		
 
-
+		// Nous definissons les joueurs.
 		joueur1 = new Humain();
 
 		joueur2 = new Cpu();
 
 		/*
-		 * L'utilisateur est invit� � entrer une combinaison � deviner.
+		 * L'utilisateur est invité à entrer une combinaison à deviner.
 		 */
 		joueur1.proposerNbr();
 
 		nbrSecret = Joueur.proposition;
-		
-		
 
 		System.out.println("Le code secret est :" + nbrSecret + ".\n");
 
 		do {
 
 			devMode();
-			
+
 			afficherCompteur();
 
 			joueur2.proposerNbr();
@@ -99,8 +120,6 @@ public class PlusMoins extends Jeu {
 		finPartie("L'ordinateur à ");
 
 	}
-
-
 
 	public void duel() {
 
@@ -132,7 +151,7 @@ public class PlusMoins extends Jeu {
 		joueur2 = new Cpu();
 
 		/*
-		 * On initialise les param�tres du Joueur grace un un bloc do{ .
+		 * On initialise les paramètres du Joueur grace un un bloc do{ .
 		 */
 		do {
 

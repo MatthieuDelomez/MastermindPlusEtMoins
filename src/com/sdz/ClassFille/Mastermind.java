@@ -11,6 +11,18 @@ import org.apache.logging.log4j.Logger;
 import com.sdz.AbstractClass.Jeu;
 import com.sdz.AbstractClass.Joueur;
 
+/******************************** MASTERMIND *******************************/
+
+/*
+ * /**************************************************************************
+ * Classe Fille, correspondant à l'instanciation des modes de jeu du Mastermind.
+ * Et elle comprend les programmes et méthodes au bon déroulement du jeu.
+ * 
+ * @see Jeu.
+ * 
+ * @author Delomez Matthieu
+ ****************************************************************************/
+
 public class Mastermind extends Jeu {
 
 	/*
@@ -45,7 +57,7 @@ public class Mastermind extends Jeu {
 	 * @See Jeu - LongueurCodeSecret, coupsMax.
 	 */
 	public Mastermind() {
-		super("\n****Mastermind****");
+		super("\n**********Mastermind**********");
 		LOGGER.info("Chargement du jeu Mastermind");
 
 		LongueurCodeSecret = Integer.valueOf(prop.getProperty("longueur"));
@@ -69,7 +81,7 @@ public class Mastermind extends Jeu {
 	public void challenger() {
 
 		LOGGER.info("Chargement du mode Challenger");
-		System.out.println("Welcome To Challenger Mode");
+		System.out.println("**********Welcome To Challenger Mode**********");
 
 		/*
 		 * On charge les méthodes de la classe mère.
@@ -134,7 +146,7 @@ public class Mastermind extends Jeu {
 	public void defenseur() {
 
 		LOGGER.info("Chargement du mode défenseur");
-		System.out.println("Welcome To Defense Mode");
+		System.out.println("****Welcome To Defense Mode****");
 
 		initCompteur();
 		genererListeSoluce();
@@ -162,7 +174,7 @@ public class Mastermind extends Jeu {
 
 		nbrSecret = Joueur.proposition;
 
-		System.out.println("Le code secret est : " + nbrSecret);
+		System.out.println("Le code secret est ==> " + nbrSecret + " <==");
 
 		/*
 		 * On effectue une boucle grace à un do , while qui défini les règles et le
@@ -197,7 +209,7 @@ public class Mastermind extends Jeu {
 		// Si le bon resulat est inférieur au code secret et que le compteur
 		// ne dépasse pas coupsMax + 1 invoquer la méthode de fin de partie
 		while (!String.valueOf(Joueur.proposition).equals(nbrSecret) && compteur < coupsMax + 1);
-		finPartie("L'ordinateur � :");
+		finPartie("L'ordinateur à :");
 
 	}
 
@@ -223,7 +235,7 @@ public class Mastermind extends Jeu {
 	public void duel() {
 
 		LOGGER.info("Chargement du mode duel");
-		System.out.println("Welcome To Duel Mode");
+		System.out.println("**********Welcome To Duel Mode**********");
 
 		String codeJoueur1, codeJoueur2;
 
@@ -312,46 +324,42 @@ public class Mastermind extends Jeu {
 		// Alors Joueur2 gagne contre joueur1
 		while (!String.valueOf(Joueur.proposition).equals(nbrSecret) && compteur < coupsMax + 1);
 		if (nbrSecret == codeJoueur1)
-			finPartie("Félicitation vous avez gagné ");
+			finPartie("==> Félicitation vous avez gagné !! <== \n\n Retentez votre chance. ");
 
 		else if (nbrSecret == codeJoueur2)
-			finPartie("Désolé mais vous avez perdu");
+			finPartie("==> Désolé mais vous avez perdu <== :(\n\n Revanche ?! ");
 
 	}
 
 	/*
 	 * Création de la méthode qui nous servira à générer une liste de solutions
-	 * possibles en fonction des r�ponses que nous allons donner.
+	 * possibles en fonction des réponses que nous allons donner.
+	 * 
+	 * Nous allons utiliser une méthode brute pour générer toutes les solutions
+	 * possibles.
 	 */
 	public void genererListeSoluce() {
-		
+
 		// Nous faisons appel à l'objet listeSet
 
 		listeSet = new HashSet();
-		
+
 		double chiffreCodeSecret = LongueurCodeSecret;
 		double NbrMaximumUtilises = nbrUtilises.length - 1;
 
-		
 		nbrSecret = "";
-		
-		
-		for(int i = 0; i < Math.pow(nbrUtilises.length, LongueurCodeSecret); i++) {
-			
+
+		for (int i = 0; i < Math.pow(nbrUtilises.length, LongueurCodeSecret); i++) {
+
 			nbrSecret = String.format("%1$" + LongueurCodeSecret + "s", i).replace(' ', '0');
-			
+
 			System.out.println("-i " + nbrSecret);
 			listeSet.add(nbrSecret);
-			listeArray=new ArrayList(listeSet);
-
+			listeArray = new ArrayList(listeSet);
 
 		}
-		
 
-	LOGGER.info("Les solutions possibles ont étaient génerées");
-
-	
-
+		LOGGER.info("Les solutions possibles ont étaient génerées");
 
 	}
 
@@ -396,9 +404,9 @@ public class Mastermind extends Jeu {
 		if (pionBienPlace == nbrSecret.length())
 			pionPresentMalPlace = 0;
 
-		System.out.println(pionPresentMalPlace + " sont présent mais mal placés " + pionBienPlace
+		System.out.println("==> " + pionPresentMalPlace + " <== sont présent mais mal placés \n" + "==> "
+				+ pionBienPlace + " <== pion Bien placés");
 
-				+ "pion Bien placés");
 	}
 
 	public void genererCodeSecret() {
@@ -420,7 +428,7 @@ public class Mastermind extends Jeu {
 	}
 
 	/*
-	 * Méthode qui consiste à éliminer tout les composant de la ArrayList qui ne
+	 * Méthode qui consiste à éliminer tout les composants de la ArrayList qui ne
 	 * correspond pas à la proposition faite par l'ordinateur.
 	 */
 	public void nettoyer() {

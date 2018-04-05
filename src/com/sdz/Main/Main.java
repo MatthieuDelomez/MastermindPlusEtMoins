@@ -11,15 +11,13 @@ import org.apache.logging.log4j.Logger;
 
 import com.sdz.Menu.Menu;
 
-
-
- /* 
- * /*************************************************************************
- * Classe Main du programme.
- * 
- * @see Menu
- * @author Delomez Matthieu
- *************************************************************************/
+/* 
+* /*************************************************************************
+* Classe Main du programme.
+* 
+* @see Menu
+* @author Delomez Matthieu
+*************************************************************************/
 
 public class Main {
 
@@ -59,33 +57,29 @@ public class Main {
 
 		} catch (IOException ex) {
 
+		} finally {
 
+			if (output != null) {
 
-			} finally {
+				try {
 
-				if (output != null) {
+					output.close();
 
-					try {
+				} catch (IOException e) {
 
-						output.close();
+					e.printStackTrace();
 
-					} catch (IOException e) {
+				} finally {
 
-						e.printStackTrace();
+					if (input != null) {
 
-					} finally {
+						try {
 
-						if (input != null) {
+							input.close();
 
-							try {
+						} catch (IOException e) {
 
-								input.close();
-
-							} catch (IOException e) {
-
-								e.printStackTrace();
-
-							}
+							e.printStackTrace();
 
 						}
 
@@ -95,7 +89,7 @@ public class Main {
 
 			}
 
-		
+		}
 
 		if (args.length > 0)
 

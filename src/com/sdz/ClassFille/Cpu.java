@@ -106,9 +106,8 @@ public class Cpu extends Joueur {
 
 		proposition = (String) listeArray.get(index);
 
-		LOGGER.info("Nombre proposé parmi la liste de solutions : " + proposition);
+		LOGGER.info("Nombre proposé parmi la liste de solutions ==> " + proposition + " <==");
 
 	}
 
 }
-

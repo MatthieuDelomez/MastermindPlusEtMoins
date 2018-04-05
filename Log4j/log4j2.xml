@@ -10,11 +10,14 @@
 </Appenders>
 <Loggers>
 	<Root level="error">
+	
+	
 	<AppenderRef ref="Console" />
 	<AppenderRef ref="MyFile"/>
 	</Root>
   	<logger name="com" level="TRACE" additivity="false">
-  		<AppenderRef ref="Console"/>
+  	
+  		<!--   <AppenderRef ref="Console"/> -->
   	</logger>
 </Loggers>
 </Configuration>

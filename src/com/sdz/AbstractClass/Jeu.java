@@ -136,9 +136,9 @@ public abstract class Jeu {
 
 		do {
 
-			System.out.println("\nChoisissez un mode de jeu :");
+			System.out.println("\n********** Choisissez un mode de jeu : **********");
 
-			System.out.println("\n1 Challenger. \n2 Défenseur. \n3 Duel. \n4 Quitter.");
+			System.out.println("\n1 *** Challenger. \n2 *** Défenseur. \n3 *** Duel. \n4 *** Quitter.");
 
 			Scanner sc = new Scanner(System.in);
 
@@ -270,7 +270,7 @@ public abstract class Jeu {
 							+ nbrSecret + ".");
 
 		else
-			System.out.println(vainqueur + " trouvé le code secret en " + (compteur - 1) + " coups !");
+			System.out.println("*** " + vainqueur + " trouvé le code secret en ==> " + (compteur - 1) + " <== coups !!! ***");
 	}
 
 	/*
@@ -287,12 +287,9 @@ public abstract class Jeu {
 		System.out.println("Coups n°" + (compteur));
 	}
 
-	/*
-	 * Gestion de la fin de partie.
-	 */
 
 	/*
-	 * Initialisation du mode d�veloppeur.
+	 * Initialisation du mode devMode.
 	 */
 	public void devMode() {
 		if (Main.modDev == 1)
