@@ -1,6 +1,5 @@
-# Mastermind Mode Console.
+# [Mastermind Mode Console] - Mettez votre logique à l'épreuve.
 
-# Mettez votre logique à l'épreuve:
 
 . Ce projet consiste à recréer le jeu Mastermind en deux variantes.
 
