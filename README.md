@@ -17,7 +17,9 @@
              . Télecharger le zip
              . Décompréssez le fichier
              . Vous pouvez Installer le fichier sur votre workspace Eclipse pour ensuite le lancer dans la console /
-             . Exécuter le .exe présent dans le fichier [ModeDeveloppeur] / [Utilisateur].
+             . Exécuter le .bat présent dans le fichier Executable, et ouvrez votre console.
+             . Exécuter la commande : java -Dlog4j.configurationFile=C:\path\to\log4j2.xml -jar Test.jar
+             . Votre .bat est prêt à l'emploi.
              . Pour changer les paramètres du jeu vous avez le fichier config.properties
              . Lancer l'application
              
